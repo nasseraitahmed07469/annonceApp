@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AdRepository extends JpaRepository<Ad, Long>, JpaSpecificationExecutor<Ad> {
+
     boolean existsByTitleAndCategory(String title, Category category);
 
+    long countByCategory(Category category);
 }

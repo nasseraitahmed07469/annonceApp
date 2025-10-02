@@ -1,6 +1,8 @@
 package fr.projet.gestionAnnonces.ressources;
 
 import fr.projet.gestionAnnonces.models.dto.AdSearchCriteria;
+import fr.projet.gestionAnnonces.models.enums.Category;
+import fr.projet.gestionAnnonces.repositories.AdRepository;
 import jakarta.validation.Valid;
 
 import org.springframework.http.HttpStatus;
@@ -29,9 +31,11 @@ import static fr.projet.gestionAnnonces.utils.Constants.APP_ROOT;
 public class AdResource {
 
     private final AdService adService;
+    private final AdRepository adRepository;
 
-    public AdResource(AdService adService) {
+    public AdResource(AdService adService, AdRepository adRepository) {
         this.adService = adService;
+        this.adRepository = adRepository;
     }
 
     @PostMapping(AD_ROOT)
@@ -63,6 +67,12 @@ public class AdResource {
     )
     public ResponseEntity<Page<AdResponse>> getAllAds(Pageable pageable) {
         return ResponseEntity.ok(adService.getAllAds(pageable));
+    }
+
+    @GetMapping(AD_ROOT + "/count")
+    public ResponseEntity<Long> getAdsCountByCategory(@RequestParam String category) {
+        long count = adRepository.countByCategory(Category.valueOf(category));
+        return ResponseEntity.ok(count);
     }
 
     @GetMapping(AD_ROOT + "/{id}")

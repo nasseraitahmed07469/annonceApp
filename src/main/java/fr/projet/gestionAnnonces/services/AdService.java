@@ -76,7 +76,7 @@ public class AdService {
     public Page<AdResponse> searchAds(AdSearchCriteria criteria) {
         Sort sort = Sort.by(
                 "desc".equalsIgnoreCase(criteria.direction()) ? Sort.Direction.DESC : Sort.Direction.ASC,
-                criteria.sort() != null ? criteria.sort() : "dateCreation"
+                criteria.sort() != null ? criteria.sort() : "createdAt"
         );
 
         Pageable pageable = PageRequest.of(
