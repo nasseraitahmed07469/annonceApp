@@ -1,0 +1,30 @@
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 16px;
+}
+
+.ad-card {
+  width: 600px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.half-width {
+  flex: 1;
+}
+
+.full-width {
+  flex: 1 1 100%;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 16px;
+}

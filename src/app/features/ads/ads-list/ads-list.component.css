@@ -1,0 +1,38 @@
+:host {
+  display: block;
+  width: calc(100% - 220px);
+  margin-left: 220px;        
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 20px; 
+}
+
+.header-container h2 {
+  margin: 0; 
+}
+
+
+.add-button {
+  background-color: #1976d2; 
+  color: #ffffff;            
+  font-weight: bold;
+  padding: 10px 20px;        
+  font-size: 16px;
+  border-radius: 8px;       
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px; 
+}
+
+.add-button:hover {
+  background-color: #115293; 
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+

@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files*/
+
+@import "../node_modules/primeicons/primeicons.css";
+@import "node_modules/ngx-toastr/toastr.css";
+
+
+::ng-deep .p-dropdown-panel {
+  width: 100% !important;
+}
+
+:root {
+  --primary-blue: rgb(29, 59, 158);
+  --text-muted: rgb(88, 88, 99);
+  --highlight-blue: rgb(67, 119, 249);
+  --highlight-green: rgb(45, 206, 137);
+  --dark-blue: rgb(12, 27, 51);
+  --light-blue: rgba(67, 119, 249, 0.1);
+  --light-green: rgba(45, 206, 137, 0.1);
+  --accent-purple: #7c3aed;
+  --accent-orange: #f59e0b;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(12, 27, 51, 0.1);
+  --border-color: #e2e8f0;
+  --border-radius: 12px;
+  --transition-speed: 0.3s;
+  --box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+

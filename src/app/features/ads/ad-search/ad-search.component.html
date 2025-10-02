@@ -1,0 +1,30 @@
+<div class="search-card">
+  <mat-form-field appearance="outline">
+    <mat-label>Titre</mat-label>
+    <input matInput placeholder="Titre" [(ngModel)]="title" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="half-width">
+    <mat-label>Catégorie</mat-label>
+    <mat-select [(ngModel)]="category">
+      <mat-option [value]="''">Toutes</mat-option>
+      <mat-option *ngFor="let c of categories" [value]="c.value">
+        {{ c.label }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Prix min</mat-label>
+    <input matInput type="number" placeholder="Prix min" [(ngModel)]="priceMin" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Prix max</mat-label>
+    <input matInput type="number" placeholder="Prix max" [(ngModel)]="priceMax" />
+  </mat-form-field>
+
+  <button mat-icon-button color="primary" (click)="onSearch()" matTooltip="Filtrer">
+    <mat-icon>filter_list</mat-icon>
+  </button>
+</div>

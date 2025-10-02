@@ -1,0 +1,33 @@
+.sidebar {
+  width: 200px; 
+  position: fixed; 
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(to bottom, #1e3c72, #2a5298);
+  padding: 20px;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-weight: bold;
+  z-index: 1000; 
+}
+
+
+.sidebar a {
+  color: #ffffff; 
+  text-decoration: none;
+  display: block;
+  padding: 10px 0;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #ffcc00; 
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.main-content {
+  margin-left: 220px;
+  padding: 20px;
+}

@@ -1,0 +1,18 @@
+<div class="sidebar">
+  <div class="sidebar-wrapper">
+    <div class="logo">
+      <a href="/dashboard" class="simple-text logo-normal" style="font-size: x-large">
+        Annonces 
+      </a>
+    </div>
+    <div style="margin-top:40%"></div>
+    <ul class="nav">
+      <li *ngFor="let menuItem of menuItems" class="nav-item">
+        <a class="nav-link" [routerLink]="menuItem.path">
+        
+          <p>{{ menuItem.title }}</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

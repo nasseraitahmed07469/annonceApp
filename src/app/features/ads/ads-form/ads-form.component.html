@@ -1,1 +1,71 @@
-<p>ads-form works!</p>
+<div class="form-wrapper">
+  <mat-card class="ad-card">
+    <mat-card-title>{{
+      mode === "create"
+        ? "Créer une annonce"
+        : mode === "edit"
+        ? "Modifier l’annonce"
+        : "Détails de l’annonce"
+    }}</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="submit()" class="ad-form-container">
+        <div class="form-row">
+          <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Titre</mat-label>
+            <input matInput formControlName="title" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Catégorie</mat-label>
+            <mat-select formControlName="category">
+              <mat-option *ngFor="let c of categories" [value]="c.value">
+                {{ c.label }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="form-row">
+          <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Prix</mat-label>
+            <input matInput type="number" formControlName="price" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Auteur</mat-label>
+            <input matInput formControlName="author" />
+          </mat-form-field>
+        </div>
+
+        <div class="form-row">
+          <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="email" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Téléphone</mat-label>
+            <input matInput formControlName="phone" />
+          </mat-form-field>
+        </div>
+
+        <div class="form-row">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Description</mat-label>
+            <textarea
+              matInput
+              formControlName="description"
+              rows="4"
+            ></textarea>
+          </mat-form-field>
+        </div>
+
+        <div class="form-actions" *ngIf="mode !== 'view'">
+          <button mat-raised-button color="primary" type="submit">
+            {{ mode === "create" ? "Créer l’annonce" : "Modifier l’annonce" }}
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
